@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Entering interactive CLI for $1. Type 'exit' to quit."
+
+while true; do
+    echo -n -e '\n> '
+    read input
+    if [ "$input" == "exit" ]; then
+        exit 0
+    else
+        $1 $input
+    fi
+done
